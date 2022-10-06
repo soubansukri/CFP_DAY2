@@ -30,4 +30,10 @@ public class MessagingAppController {
     public String postMessage(@RequestBody User user){
         return "Hello" +" "+user.getFirstName()+" "+user.getLastName()+" from Bridgelabz";
     }
+
+    //UC-5=Put mapping using path variable and request param
+    @RequestMapping(value = "/put/{firstName}",method = RequestMethod.PUT)
+    public String putMessage(@PathVariable String firstName,@RequestParam String lastName){
+        return "Hello" +" "+firstName+" "+lastName+" from Bridgelabz";
+    }
 }

@@ -18,4 +18,12 @@ public class MessagingAppController {
         return "Hello" +" "+name+" from Bridgelabz";
     }
 
+    //UC-3=Path Variable
+
+    @RequestMapping(value = "/path/{name}",method = RequestMethod.GET)
+    public String PathVariableMessage(@PathVariable String name){
+        return "Hello" +" "+name+" from Bridgelabz";
+    }
+
+
 }

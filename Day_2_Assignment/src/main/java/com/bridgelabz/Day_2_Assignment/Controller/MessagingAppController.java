@@ -14,16 +14,20 @@ public class MessagingAppController {
 
     // UC-2=Get Request Param Method
     @RequestMapping(value = "/Param",method = RequestMethod.GET)
-    public String ReqParamMessage(@RequestParam String name){
+    public String reqParamMessage(@RequestParam String name){
         return "Hello" +" "+name+" from Bridgelabz";
     }
 
     //UC-3=Path Variable
 
     @RequestMapping(value = "/path/{name}",method = RequestMethod.GET)
-    public String PathVariableMessage(@PathVariable String name){
+    public String pathVariableMessage(@PathVariable String name){
         return "Hello" +" "+name+" from Bridgelabz";
     }
 
-
+    //UC-4=Post mapping using DTO
+    @RequestMapping(value = "/post",method = RequestMethod.POST)
+    public String postMessage(@RequestBody User user){
+        return "Hello" +" "+user.getFirstName()+" "+user.getLastName()+" from Bridgelabz";
+    }
 }
